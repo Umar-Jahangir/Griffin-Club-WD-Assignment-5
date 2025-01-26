@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Notice Management</title>
+    <link rel="stylesheet" href="noticeAdmin.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Panel: Notice Management</h1>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="noticeAdmin.html">Notice Admin Panel</a></li>
+            <li><a href="teamsAdmin.html">Teams Admin Panel</a></li>
+            <li><a href="index.html">User Dashboard</a></li>
+        </ul>
+    </nav>
+    <br><br><br>
+    <main>
+        <section class="form-section">
+            <h2>Update Event Notice</h2>
+            <form id="adminForm">
+                <div class="form-group">
+                    <label for="eventName">Event Name:</label>
+                    <input type="text" id="eventName" name="eventName" placeholder="Enter event name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventDate">Event Date:</label>
+                    <input type="date" id="eventDate" name="eventDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventTime">Event Time:</label>
+                    <input type="time" id="eventTime" name="eventTime" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventLocation">Event Location:</label>
+                    <input type="text" id="eventLocation" name="eventLocation" placeholder="Enter event location" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventFile">Attach File:</label>
+                    <input type="file" id="eventFile" name="eventFile">
+                </div>
+
+                <div class="form-group">
+                    <label for="aboutTheEvent">About the Event:</label>
+                    <textarea id="aboutTheEvent" name="aboutTheEvent" placeholder="Provide details about the event" rows="4"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="submitNotice">Update Notice</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="noticeAdmin.js"></script>
+</body>
+</html>

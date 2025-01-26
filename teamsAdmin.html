@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Team Member Details</title>
+    <link rel="stylesheet" href="teamsAdmin.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Panel: Update Team Member Details</h1>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="noticeAdmin.html">Notice Admin Panel</a></li>
+            <li><a href="teamsAdmin.html">Teams Admin Panel</a></li>
+            <li><a href="index.html">User  Dashboard</a></li>
+        </ul>
+    </nav>
+    <br><br><br>
+    <main>
+        <section class="update-form">
+            <h2>Update Team Member Details</h2>
+            <form id="updateForm">
+                <div class="form-group">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" placeholder="Enter team member's name" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="class">Class:</label><br>
+                    <input type="text" id="class" name="class" placeholder="Enter new class" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="branch">Branch:</label><br>
+                    <input type="text" id="branch" name="branch" placeholder="Enter new branch" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="year">Academic Year:</label><br>
+                    <input type="text" id="year" name="year" placeholder="Enter new academic year" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <button type="button" id="updateButton">Update</button>
+                </div>
+                <div id="message"></div>
+            </form>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="teamsAdmin.js"></script>
+</body>
+</html>

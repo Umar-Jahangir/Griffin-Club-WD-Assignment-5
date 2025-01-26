@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Registration</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <div class="container">
+        <form id="registrationForm">
+                <h1>Register</h1>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="number">Phone Number</label>
+                    <input type="tel" id="number" name="number" placeholder="Enter your 10-digit number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <select id="year" name="year" required>
+                        <option value="" disabled selected>Select Year</option>
+                        <option value="FY">FY</option>
+                        <option value="SY">SY</option>
+                        <option value="TY">TY</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="branch">Branch</label>
+                    <select id="branch" name="branch" required>
+                        <option value="" disabled selected>Select Branch</option>
+                        <option value="CS Core">CS Core</option>
+                        <option value="IT">IT</option>
+                        <option value="CS (AIML)">CS (AIML)</option>
+                        <option value="CS (AI)">CS (AI)</option>
+                        <option value="AIDS">AIDS</option>
+                        <option value="CS (CBI)">CS (CBI)</option>
+                    </select>
+                </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const number = document.getElementById('number').value.trim();
+            const year = document.getElementById('year').value;
+            const branch = document.getElementById('branch').value;
+
+            // Check if all fields are filled
+             // Name validation
+    if (name === '') {
+        document.getElementById('nameError').textContent = 'Name is required.';
+        isValid = false;
+    } else {
+        document.getElementById('nameError').textContent = '';
+    }
+
+    // Email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        document.getElementById('emailError').textContent = 'Please enter a valid email address.';
+        isValid = false;
+    } else {
+        document.getElementById('emailError').textContent = '';
+    }
+
+    // Number validation
+    const numberPattern = /^[0-9]{10}$/;
+    if (!numberPattern.test(number)) {
+        document.getElementById('numberError').textContent = 'Please enter a valid 10-digit number.';
+        isValid = false;
+    } else {
+        document.getElementById('numberError').textContent = '';
+    }
+
+    // Year validation
+    if (!year) {
+        document.getElementById('yearError').textContent = 'Please select a year.';
+        isValid = false;
+    } else {
+        document.getElementById('yearError').textContent = '';
+    }
+
+    // Branch validation
+    if (!branch) {
+        document.getElementById('branchError').textContent = 'Please select a branch.';
+        isValid = false;
+    } else {
+        document.getElementById('branchError').textContent = '';
+    }
+
+            const formData = { name, email, number, year, branch };
+
+            let registrations = JSON.parse(localStorage.getItem('registrations')) || [];
+
+            registrations.push(formData);
+
+            localStorage.setItem('registrations', JSON.stringify(registrations)); // saving updated data locally
+
+            alert('Form submitted successfully!');
+
+            document.getElementById('registrationForm').reset();
+        });
+    </script>
+</body>
+</html>
+

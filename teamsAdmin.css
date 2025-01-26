@@ -1,0 +1,142 @@
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F5ECD5; 
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background: black;
+    color: #F5ECD5;
+    padding: 10px 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header::before {
+    content: '\1F464'; /* Unicode for a user symbol */
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+/* Navigation bar............................................................................................. */
+.navbar {
+    background: #578E7E; 
+    overflow: hidden;
+    padding: 10px 20px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar a {
+    display: block;
+    color: #F5ECD5; /* Light cream text */
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.navbar a::before {
+    content: '\2699'; /* Unicode for a gear symbol */
+    font-size: 1rem;
+    margin-right: 5px;
+}
+
+.navbar a[href*="index.html"]::before {
+    content: '\1F465'; /* Unicode for a group symbol */
+}
+
+.navbar a:hover {
+    background-color: #4A7B7A; /* Darker teal on hover */
+}
+
+/* Main section styles */
+main {
+    padding: 20px;
+}
+
+/* Update form styles */
+.update-form {
+    background: white; /* White form background */
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.update-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #578E7E; /* Teal color for headings */
+    border-bottom: 2px solid #578E7E; /* Teal border */
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333; /* Dark text for labels */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #578E7E; /* Teal border on focus */
+    outline: none;
+}
+
+button {
+    background-color: #578E7E; /* Teal button */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #4A7B7A; /* Darker teal on hover */
+    transform: translateY(-1px); /* Slight lift effect */
+}
+
+button:active {
+    transform: translateY(0); /* Reset lift effect */
+}

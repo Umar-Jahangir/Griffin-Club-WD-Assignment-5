@@ -1,0 +1,134 @@
+body {
+    background: linear-gradient(135deg, #EAD8B1, #FFD8A9);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+  
+  .logo img {
+    object-fit: cover;
+    width: 150px;
+    border-radius: 50%;
+    border: 4px solid #000B58;
+    animation: logoAnimation 2s ease-out;
+  }
+  
+  @keyframes logoAnimation {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  header {
+    background-color: #000B58;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  header nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .hero {
+    background-image: url("Assets/HeroBackground.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    padding: 50px 20px;
+    text-align: center;
+    animation: fadeIn 3s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .notice-board {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 80%;
+    background: #FFF8E1;
+    border: 2px solid #FFD54F;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.notice-board h1 {
+  font-size: 28px;
+  color: #FF6F00;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.notice-container {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+#notices {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    animation: scrollUp 25s linear infinite;
+    font-size: 18px;
+}
+
+#notices li {
+    margin: 5px 0;
+    color: #424242;
+    font-weight: bold;
+}
+
+@keyframes scrollUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+.notice-container:hover #notices {
+    animation-play-state: paused;
+}
